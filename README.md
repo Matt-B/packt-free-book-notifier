@@ -12,4 +12,10 @@ Test that everything is working - 'node index.js'.
 
 If all is well you should get a push telling you the title of todays free book.
 
-If it worked, then you can run this daily by setting up a cron job.
+If it worked, then you can run this daily by setting up a cron job, along the lines of this:
+
+```
+0 9 * * * node /users/you/stuff/packt-free-book-notifier/index.js 
+```
+
+This will notify you every morning at 9am.
