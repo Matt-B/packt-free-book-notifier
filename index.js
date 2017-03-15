@@ -23,7 +23,14 @@ async.series([
 
   function pushNotification(next) {
     var deviceParams = {};
-    pusher.note(deviceParams, 'Packt Free Book', 'Today\'s Free Book is ' + bookTitle, next);
+
+    if(bookTitle !== "" && bookTitle) {
+      pusher.note(deviceParams, 'Packt Free Book', 'Today\'s Free Book is ' + bookTitle + '\n'
+        + 'Get it at https://www.packtpub.com/packt/offers/free-learning', next);
+    } else {
+      pusher.note(deviceParams, 'Packt Free Book', 'Something went wrong and I couldn\'t get details of todays book.\n'
+        + 'Please check the website at https://www.packtpub.com/packt/offers/free-learning', next);
+    }
   }
 
 ]);
