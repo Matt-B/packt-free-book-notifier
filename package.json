@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.1.5",
-    "cheerio": "^0.22.0",
+    "puppeteer": "^1.14.0",
     "pushbullet": "^2.0.0",
-    "request": "^2.81.0"
   }
 }
