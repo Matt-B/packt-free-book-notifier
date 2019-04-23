@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^1.14.0",
-    "pushbullet": "^2.0.0",
+    "pushbullet": "^2.0.0"
   }
 }
