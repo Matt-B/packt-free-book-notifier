@@ -1,6 +1,3 @@
-var cheerio = require('cheerio');
-var request = require('request');
-var async = require('async');
 var PushBullet = require('pushbullet');
 var config = require('./config.json');
 var pusher = new PushBullet(config.pushbullet_api_key);
