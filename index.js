@@ -8,7 +8,8 @@ var bookTitle;
 async function getBookTitle() {
   var browser = await puppeteer.launch({ headless: true });
   var page = await browser.newPage();
-  await page.goto('https://www.packtpub.com/packt/offers/free-learning');
+  await page.goto('https://www.packtpub.com/gb/free-learning');
+  await page.waitForSelector('.product__title');
   bookTitle = await page.evaluate(() => document.querySelector('.product__title').textContent);
   await browser.close();
   var deviceParams = {};
@@ -20,5 +21,7 @@ async function getBookTitle() {
       + 'Please check the website at https://www.packtpub.com/packt/offers/free-learning');
   }
 };
+
+process.on('unhandledRejection', up => { throw up });
 
 getBookTitle();
